@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  gpt-interface-app:
+    image: gpt-interface:0.1.0
+    container_name: gpt-interface
+    env_file:
+      - gpt-interface.env
+    ports:
+      - "8502:8501"
+    networks:
+     - gpt-interface-network
+
+networks:
+  gpt-interface-network:
+    driver: bridge
